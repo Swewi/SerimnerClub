@@ -1,1 +1,0 @@
-web: gunicorn serimner.wsgi --log-file -
