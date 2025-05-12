@@ -23,4 +23,12 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("home.urls")),
     path("gallery/", include("gallery.urls")),
+    # Direct favicon.ico requests to the correct static file
+    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('images/favicon/favicon.ico'))),
+    # Direct site.webmanifest requests explicitly
+    path('site.webmanifest', RedirectView.as_view(url=staticfiles_storage.url('images/favicon/site.webmanifest'))),
 ]
+
+# Add this for development environment
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
