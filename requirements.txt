@@ -14,10 +14,10 @@ dj-database-url==2.3.0
 dj3-cloudinary-storage==0.0.6
 Django==5.1.7
 django-allauth==65.5.0
+django-bootstrap5==25.1
 django-browser-reload==1.18.0
 django-import-export==4.3.7
 django-jinja==2.11.0
-django-tailwind==4.0.1
 django-unfold==0.52.0
 gunicorn==23.0.0
 idna==3.10

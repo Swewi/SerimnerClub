@@ -47,16 +47,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cloudinary',
-    'tailwind',
-    'theme',
+    'django_bootstrap5',
     'home',
     'gallery',
 ]
-
-TAILWIND_APP_NAME = 'theme'
-
-# For production (Heroku)
-TAILWIND_CSS_PATH = 'css/dist/styles.css'  # Default path used by django-tailwind
 
 NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
 
