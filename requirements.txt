@@ -14,6 +14,7 @@ dj-database-url==2.3.0
 dj3-cloudinary-storage==0.0.6
 Django==5.1.7
 django-allauth==65.5.0
+django-baton==4.2.2
 django-bootstrap5==25.1
 django-browser-reload==1.18.0
 django-import-export==4.3.7

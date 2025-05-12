@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DEBUG = 'DEV' in os.environ
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
@@ -40,6 +40,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'baton',  # at the top of the list as per documentation
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -50,6 +51,7 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'home',
     'gallery',
+    'baton.autodiscover',  # At the very end of the list as per documentation
 ]
 
 NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
@@ -86,11 +88,6 @@ TEMPLATES = [
         },
     },
 ]
-
-if 'DEV' in os.environ:
-    NPM_BIN_PATH = 'npm.cmd'
-else:
-    NPM_BIN_PATH = 'npm'
 
 WSGI_APPLICATION = 'serimner.wsgi.application'
 
