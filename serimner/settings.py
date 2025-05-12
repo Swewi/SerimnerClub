@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DEBUG = False
+DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
@@ -96,17 +96,23 @@ WSGI_APPLICATION = 'serimner.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 # Database settings
-if 'DEV' in os.environ:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
-    print('Development environment')
-else:
-    DATABASES = {'default': dj_database_url.parse(os.getenv('DATABASE_URL'))}
-    print('Production environment')
+# Check if we're in a development environment
+database_url = os.environ.get('DATABASE_URL')
+
+if not database_url:
+    raise ValueError(
+        'DATABASE_URL environment variable is not set. '
+        'Please configure your production database connection.'
+    )
+
+# Configure production database
+DATABASES = {
+    'default': dj_database_url.config(
+        default=database_url,
+        conn_max_age=600,  # Connection persistence
+        ssl_require=True   # Enforce SSL for production databases
+    )
+}
 
 
 # Password validation
