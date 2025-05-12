@@ -55,6 +55,9 @@ INSTALLED_APPS = [
 
 TAILWIND_APP_NAME = 'theme'
 
+# For production (Heroku)
+TAILWIND_CSS_PATH = 'css/dist/styles.css'  # Default path used by django-tailwind
+
 NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
 
 INTERNAL_IPS = [
