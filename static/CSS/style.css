@@ -1,0 +1,13 @@
+
+/* CSS HEX */
+/* --night: #0c0c0cff;
+--tyrian-purple: #45022dff;
+--chestnut: #9b3922ff;
+--cocoa-brown: #dc6b19ff;
+--linen: #eee4dcff; */
+
+body {
+    background-color: #9b3922ff;
+    color: #eee4dcff;
+    font-family: 'Noto Sans', sans-serif;
+}
