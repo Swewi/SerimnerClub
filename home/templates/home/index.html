@@ -5,13 +5,16 @@
 {% block title %}Home - Serminer{% endblock %}
 
 {% block content %}
-<img src="{% static 'images/serimner_logo.png' %}" alt="Logo" class="img-fluid mb-4" style="max-width: 200px;">
 
 <div class="jumbotron text-center">
-    <h1 class="display-4">Welcome to Serimner</h1>
-    <p class="lead">Your one-stop destination for all things Viking.</p>
+    <div id="logo">
+        <img src="{% static 'images/serimner_logo.png' %}" alt="Serimner Club Logo"
+            class="logo img-fluid rounded-circle mb-4">
+    </div>
+    <h1 class="display-3">Welcome to Serimner</h1>
+    <p class="lead">A club in Second life dedicated to friendship and good music!</p>
     <hr class="my-4">
-    <p>Explore our gallery, learn about Viking history, and check out our schedule.</p>
+    <p>Explore our gallery, learn about Viking history, and check out the schedule.</p>
     <a class="btn btn-primary btn-lg" href="/gallery/" role="button">View Gallery</a>
 </div>
 
