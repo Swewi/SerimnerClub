@@ -1,0 +1,16 @@
+
+.logo {
+    max-width: 30rem;
+    border: 2px solid #45022dff;    
+    box-shadow: #0c0c0cff 0px 0px 20px;
+}
+
+h1 {
+    font-family: "Cinzel", serif;
+    background: linear-gradient(to top, #45022dff, #9b3922ff, rgb(240, 173, 74));
+    background-clip: text;              /* standard (not yet fully supported) */
+    -webkit-background-clip: text;      /* required for Chrome, Safari */
+    -webkit-text-fill-color: transparent;
+    font-weight: 800 !important;
+    letter-spacing: 0.4rem;
+}
